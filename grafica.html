@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" 
+            href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer 
+            src="https://pyscript.net/alpha/pyscript.js">
+        </script>
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <py-env>
+        - matplotlib
+        - pandas
+    </py-env>
+</head>
+<body>
+    <h1>Animación para <span id="name-goes-here">KALIZ</span></h1>
+    <py-script>
+        import matplotlib.pyplot as plt
+        import numpy as np
+        
+        #Funciones
+        
+        def poncolor(lista_numeros):
+         
+            lista_colors = []
+            for i in lista_numeros:
+                if i == 0:
+                    lista_colors += ['red']
+                elif i == 1:
+                    lista_colors += ['palegreen']
+                elif i == 2:
+                    lista_colors += ['forestgreen']
+            return(lista_colors)
+        #Fin de Funciones
+        
+        fruits=[[2,2,2,2,2,2,2,2,2,2,2,2], [2,2,2,2,2,2,2,2,2,2,2,2], [0,0,0,0,0,0,1,2,2,2,1,1]]
+        x = ['ENE','FEB','MAR','ABR','MAY', 'JUN','JUL','AGO','SEP','OCT','NOV','DIC']
+        
+        fig, ax = plt.subplots()
+        i = 1
+        for fruta in fruits:
+            fila = list(str(i)* (len(x)))
+            colores = poncolor(fruta)
+            ax.scatter(x, y=fila , c=colores)
+            i+=1
+        
+        
+        # plot
+        plt.title("Temporadas de las frutas")
+        
+        fig
+        #Segunda animación
+        <!--import random
+        
+        names = ["Kaliz", "????? ????????", "???????????", "?? ?????", "????????"]
+        el = Element("name-goes-here")
+        while True:
+            name = random.choice(names)
+            for n in range(0, len(name)+1):
+                el.write(name[0:n])
+                await asyncio.sleep(0.2)
+            await asyncio.sleep(5)
+            for n in range(1, len(name)+1):
+                el.write(name[0:-n])
+                await asyncio.sleep(0.2)-->
+        
+    </py-script>
+</body>
+</html>
